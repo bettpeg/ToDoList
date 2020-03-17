@@ -1,6 +1,8 @@
 const $formAddTask = $('#formAddTask');
 const $tasksList = $('#tasks-list');
 const $modalAddTask = $('#modalAddTask');
+const $lists = [$('#todo'), $('#inprogress'), $('#done')];
+const removeBtn = $('#remove-all');
 
 $formAddTask.on('submit', function(event){
     event.preventDefault();
@@ -27,3 +29,5 @@ for (let key in localStorage) {
 
     addTask(task.id, task);
 }
+
+removeBtn.on('click', removeAll);
