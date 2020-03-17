@@ -3,6 +3,14 @@ const $tasksList = $('#tasks-list');
 const $modalAddTask = $('#modalAddTask');
 const $lists = [$('#todo'), $('#inprogress'), $('#done')];
 const removeBtn = $('#remove-all');
+const toDoCount = $('#todo-count');
+const inProgressCount = $('#inprogress-count');
+const doneCount = $('#done-count');
+const $tasksCount = {
+    type: '',
+    currCount: 0
+};
+
 
 $formAddTask.on('submit', function(event){
     event.preventDefault();
@@ -10,7 +18,7 @@ $formAddTask.on('submit', function(event){
     let task = {
         id: new Date().getTime(),
         title: $('[name="title"]', this).val(),
-        status: 1 // 1- toDo, 2 - inProgress, 3 - done
+        status: 3 // 1- toDo, 2 - inProgress, 3 - done
     };
 
     addTask(task.id, task);
@@ -20,6 +28,9 @@ $formAddTask.on('submit', function(event){
     $modalAddTask.modal('hide');
 
     this.reset();
+
+    changeTasksCount(task.status);
+
 });
 
 for (let key in localStorage) {
@@ -28,6 +39,11 @@ for (let key in localStorage) {
     const task = JSON.parse(localStorage[key]);
 
     addTask(task.id, task);
+
+    const currStatus = task.status;
+
+    changeTasksCount(currStatus);
+    
 }
 
 removeBtn.on('click', removeAll);

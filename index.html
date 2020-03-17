@@ -14,7 +14,7 @@
         <div class="container">
 
             <div class="page-header">
-                <h1>Task-list for the Scary Friday</h1>
+                <h1>To Do List</h1>
             </div>
 
             <div class="text-right">
@@ -45,9 +45,32 @@
                 </div>
             </div>
 
-            
-            
-       </div>
+            <div class="row panels">
+
+                <div class="col-lg-4 col-sm-6 col-xs-12 panel-cont">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading"><h1 class="panel-title">Should be done</h1></div>
+                        <div class="panel-body">Tasks count: <span class="badge" id="todo-count">0</span></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 col-xs-12 panel-cont">              
+                    <div class="panel panel-warning">
+                        <div class="panel-heading"><h1 class="panel-title">Will be done soon</h1></div>
+                        <div class="panel-body">Tasks count: <span class="badge" id="inprogress-count">0</span></div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-sm-6 col-xs-12 panel-cont">
+                    <div class="panel panel-success">
+                        <div class="panel-heading"><h1 class="panel-title">Already done</h1></div>
+                        <div class="panel-body">Tasks count: <span class="badge" id="done-count">0</span></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
 
        <div class="modal fade" id="modalAddTask" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">

@@ -1,3 +1,12 @@
 .tab-content {
     padding-top: 15px;
 }
+
+.panels {
+	padding: 0 auto;
+}
+
+.panel-cont {
+	width: 100%/3;
+	min-width: 330px;
+}
